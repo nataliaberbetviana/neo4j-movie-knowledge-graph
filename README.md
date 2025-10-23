@@ -15,16 +15,16 @@
 
 ## 📑 Índice
 
-- [📚 Sobre o Projeto](#-sobre-o-projeto)
-- [🎯 Objetivos](#-objetivos)
-- [🛠️ Tecnologias](#️-tecnologias)
-- [📁 Estrutura](#-estrutura)
-- [🚀 Começando](#-começando)
-- [📊 Modelo de Dados](#-modelo-de-dados)
-- [💡 Consultas](#-consultas)
-- [🏆 Resultados](#-resultados)
-- [📄 Licença](#-licença)
-- [👩‍💻 Autora](#-autora)
+- [📚 Sobre o Projeto](#sobre-o-projeto)
+- [🎯 Objetivos](#objetivos)
+- [🛠️ Tecnologias](#tecnologias)
+- [📁 Estrutura](#estrutura)
+- [🚀 Começando](#começando)
+- [📊 Modelo de Dados](#modelo-de-dados)
+- [💡 Consultas](#consultas)
+- [🏆 Resultados](#resultados)
+- [📄 Licença](#licença)
+- [👩‍💻 Autora](#autora)
 
 ---
 
@@ -347,9 +347,9 @@ Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 <br>
 
 ```
-  ╔═══════════════════════════════════════════════════════════╗
-  ║   "Dados são apenas dados. Grafos contam histórias." 📊   ║
-  ╚═══════════════════════════════════════════════════════════╝
+    ╔═══════════════════════════════════════════════════════════╗
+    ║   "Dados são apenas dados. Grafos contam histórias." 📊   ║
+    ╚═══════════════════════════════════════════════════════════╝
 ```
 
 <sub>Projeto desenvolvido para o Bootcamp Neo4j & Análise de Dados com Grafos | DIO © 2025</sub>
