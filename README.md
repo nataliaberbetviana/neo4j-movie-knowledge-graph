@@ -9,43 +9,30 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-FFB6C1?style=for-the-badge)
 
+</div>
+
 ---
 
 ## 📑 Índice
-
-<table align="center">
-<tr>
-<td>
 
 - [📚 Sobre o Projeto](#-sobre-o-projeto)
 - [🎯 Objetivos](#-objetivos)
 - [🛠️ Tecnologias](#️-tecnologias)
 - [📁 Estrutura](#-estrutura)
 - [🚀 Começando](#-começando)
-
-</td>
-<td>
-
 - [📊 Modelo de Dados](#-modelo-de-dados)
 - [💡 Consultas](#-consultas)
 - [🏆 Resultados](#-resultados)
-- [📝 Licença](#-licença)
+- [📄 Licença](#-licença)
 - [👩‍💻 Autora](#-autora)
-
-</td>
-</tr>
-</table>
 
 ---
 
 ## 📚 Sobre o Projeto
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Este projeto foi desenvolvido como desafio do              │
-│  Bootcamp Neo4j e Análise de Dados com Grafos pela DIO     │
-└─────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+Este projeto foi desenvolvido como desafio do **Bootcamp Neo4j e Análise de Dados com Grafos** pela **DIO**.
 
 Criação de um **Grafo de Conhecimento** que simula um serviço de streaming, modelando as relações entre:
 
@@ -53,15 +40,13 @@ Criação de um **Grafo de Conhecimento** que simula um serviço de streaming, m
 |:-----------:|:---------:|:---------:|:---------:|:------------:|:----------:|
 | Assistem | Contêm | Contêm | Atuam | Dirigem | Classificam |
 
+</div>
+
 ---
 
 ## 🎯 Objetivos
 
 ### 📌 Requisitos do Desafio
-
-<table align="center">
-<tr>
-<td width="50%">
 
 #### 1️⃣ **Entidades (Nós)**
 
@@ -76,9 +61,6 @@ Mínimo de **10 nós** por tipo:
 - Genre     // Gêneros
 ```
 
-</td>
-<td width="50%">
-
 #### 2️⃣ **Relacionamentos**
 
 Conexões entre entidades:
@@ -86,14 +68,10 @@ Conexões entre entidades:
 ```cypher
 // Relações do modelo
 - WATCHED    {rating: Float}
-- ACTED_IN
-- DIRECTED
+- ACTED_IN   {role: String}
+- DIRECTED   {year: Integer}
 - IN_GENRE
 ```
-
-</td>
-</tr>
-</table>
 
 ### 🎨 Estrutura do Modelo
 
@@ -114,36 +92,26 @@ graph TB
     M -->|IN_GENRE| G
     S -->|IN_GENRE| G
     
-    style U fill:#FFB6C1
-    style M fill:#87CEEB
-    style S fill:#87CEEB
-    style P fill:#DDA0DD
-    style G fill:#F0E68C
+    style U fill:#FF6B6B,stroke:#C92A2A,stroke-width:3px,color:#000
+    style M fill:#4ECDC4,stroke:#0A8080,stroke-width:3px,color:#000
+    style S fill:#45B7D1,stroke:#1A5490,stroke-width:3px,color:#000
+    style P fill:#A78BFA,stroke:#6D28D9,stroke-width:3px,color:#000
+    style G fill:#FCD34D,stroke:#B45309,stroke-width:3px,color:#000
 ```
 
 ---
 
 ## 🛠️ Tecnologias
 
-<table align="center">
-<tr>
-<td align="center" width="25%">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg" width="60"/>
-<br><b>Neo4j</b>
-<br><sub>Database</sub>
-</td>
-<td align="center" width="25%">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="60"/>
-<br><b>Git</b>
-<br><sub>Version Control</sub>
-</td>
-<td align="center" width="25%">
-<img src="https://cdn-icons-png.flaticon.com/512/6133/6133884.png" width="60"/>
-<br><b>CSV</b>
-<br><sub>Data Format</sub>
-</td>
-</tr>
-</table>
+<div align="center">
+
+| Tecnologia | Descrição |
+|:----------:|:----------|
+| ![Neo4j](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg)<br>**Neo4j** | Banco de dados de grafos |
+| ![Git](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg)<br>**Git** | Controle de versão |
+| 📊 **CSV** | Formato de dados |
+
+</div>
 
 ---
 
@@ -152,20 +120,20 @@ graph TB
 ```
 📦 neo4j-movie-knowledge-graph
 │
-├── 📂 data/                    # Arquivos de dados
-│   ├── 📄 users.csv           # Usuários do sistema
-│   ├── 📄 movies.csv          # Catálogo de filmes
-│   ├── 📄 series.csv          # Catálogo de séries
-│   ├── 📄 genres.csv          # Gêneros disponíveis
-│   ├── 📄 people.csv          # Atores e diretores
-│   └── 📄 relationships.csv   # Relações entre entidades
+├── 📂 data/
+│   ├── 📄 users.csv
+│   ├── 📄 movies.csv
+│   ├── 📄 series.csv
+│   ├── 📄 genres.csv
+│   ├── 📄 people.csv
+│   └── 📄 relationships.csv
 │
-├── 📂 scripts/                 # Scripts Cypher
-│   ├── 🔧 01_create_constraints.cypher
+├── 📂 scripts/
+│   ├── 📧 01_create_constraints.cypher
 │   ├── 📥 02_import_data.cypher
-│   └── 🔍 03_queries.cypher
+│   └── 📝 03_queries.cypher
 │
-├── 📂 docs/                    # Documentação
+├── 📂 docs/
 │   ├── 🖼️ modelo_grafo.png
 │   └── 📖 exemplos_queries.md
 │
@@ -179,22 +147,14 @@ graph TB
 
 ### ✅ Pré-requisitos
 
-<table align="center">
-<tr>
-<td>
-
 - 🖥️ [Neo4j Desktop](https://neo4j.com/download/) ou [Neo4j Aura](https://neo4j.com/cloud/aura/)
 - 💻 Cypher Shell ou Neo4j Browser
 - 📦 Git instalado
 
-</td>
-</tr>
-</table>
-
 ### 📋 Instalação
 
 <details>
-<summary><b>🔽 Passo 1: Clonar o Repositório</b></summary>
+<summary><b>📥 Passo 1: Clonar o Repositório</b></summary>
 
 ```bash
 git clone git@github.com:nataliaberbetviana/neo4j-movie-knowledge-graph.git
@@ -204,7 +164,7 @@ cd neo4j-movie-knowledge-graph
 </details>
 
 <details>
-<summary><b>🔽 Passo 2: Configurar Neo4j</b></summary>
+<summary><b>⚙️ Passo 2: Configurar Neo4j</b></summary>
 
 1. Abra o **Neo4j Desktop**
 2. Crie um novo banco de dados
@@ -214,27 +174,20 @@ cd neo4j-movie-knowledge-graph
 </details>
 
 <details>
-<summary><b>🔽 Passo 3: Executar Scripts</b></summary>
+<summary><b>▶️ Passo 3: Executar Scripts</b></summary>
 
 Execute os scripts na ordem:
 
-[//]: # (```cypher)
+```cypher
+// 1️⃣ Criar restrições e índices
+:source scripts/01_create_constraints.cypher
 
-[//]: # (// 1️⃣ Criar restrições e índices)
+// 2️⃣ Importar dados dos CSVs
+:source scripts/02_import_data.cypher
 
-[//]: # (:source scripts/01_create_constraints.cypher)
-
-[//]: # ()
-[//]: # (// 2️⃣ Importar dados dos CSVs)
-
-[//]: # (:source scripts/02_import_data.cypher)
-
-[//]: # ()
-[//]: # (// 3️⃣ Executar queries de exemplo)
-
-[//]: # (:source scripts/03_queries.cypher)
-
-[//]: # (```)
+// 3️⃣ Executar queries de exemplo
+:source scripts/03_queries.cypher
+```
 
 </details>
 
@@ -242,7 +195,7 @@ Execute os scripts na ordem:
 
 ## 📊 Modelo de Dados
 
-### 🏗️ Arquitetura do Grafo
+### 🗝️ Arquitetura do Grafo
 
 | Entidade | Propriedades | Descrição |
 |:--------:|:-------------|:----------|
@@ -271,102 +224,66 @@ Execute os scripts na ordem:
 <details>
 <summary><b>📊 Top 10 Filmes Mais Assistidos</b></summary>
 
-[//]: # (```cypher)
-
-[//]: # (MATCH &#40;u:User&#41;-[w:WATCHED]->&#40;m:Movie&#41;)
-
-[//]: # (RETURN m.title AS Filme, )
-
-[//]: # (       count&#40;w&#41; AS TotalVisualizações,)
-
-[//]: # (       avg&#40;w.rating&#41; AS AvaliaçãoMédia,)
-
-[//]: # (       max&#40;w.rating&#41; AS MelhorNota)
-
-[//]: # (ORDER BY TotalVisualizações DESC, AvaliaçãoMédia DESC)
-
-[//]: # (LIMIT 10;)
-
-[//]: # (```)
+```cypher
+MATCH (u:User)-[w:WATCHED]->(m:Movie)
+RETURN m.title AS Filme, 
+       count(w) AS TotalVisualizações,
+       avg(w.rating) AS AvaliaçãoMédia,
+       max(w.rating) AS MelhorNota
+ORDER BY TotalVisualizações DESC, AvaliaçãoMédia DESC
+LIMIT 10;
+```
 
 </details>
 
 <details>
 <summary><b>🎭 Atores Frequentes de um Diretor</b></summary>
 
-[//]: # (```cypher)
-
-[//]: # (MATCH &#40;d:Person&#41;-[:DIRECTED]->&#40;m:Movie&#41;<-[:ACTED_IN]-&#40;a:Person&#41;)
-
-[//]: # (WHERE d.name = "Christopher Nolan")
-
-[//]: # (WITH a, count&#40;m&#41; AS colaborações)
-
-[//]: # (WHERE colaborações > 1)
-
-[//]: # (RETURN a.name AS Ator, colaborações)
-
-[//]: # (ORDER BY colaborações DESC;)
-
-[//]: # (```)
+```cypher
+MATCH (d:Person)-[:DIRECTED]->(m:Movie)<-[:ACTED_IN]-(a:Person)
+WHERE d.name = "Christopher Nolan"
+WITH a, count(m) AS colaborações
+WHERE colaborações > 1
+RETURN a.name AS Ator, colaborações
+ORDER BY colaborações DESC;
+```
 
 </details>
 
 <details>
 <summary><b>🎯 Sistema de Recomendação</b></summary>
 
-[//]: # (```cypher)
+```cypher
+// Baseado em gêneros favoritos do usuário
+MATCH (u:User {name: "Maria"})-[:WATCHED]->(m:Movie)-[:IN_GENRE]->(g:Genre)
+WITH u, g, count(*) AS preferência
+ORDER BY preferência DESC
+LIMIT 3
 
-[//]: # (// Baseado em gêneros favoritos do usuário)
+MATCH (g)<-[:IN_GENRE]-(recomendação:Movie)
+WHERE NOT EXISTS((u)-[:WATCHED]->(recomendação))
 
-[//]: # (MATCH &#40;u:User {name: "Maria"}&#41;-[:WATCHED]->&#40;m:Movie&#41;-[:IN_GENRE]->&#40;g:Genre&#41;)
-
-[//]: # (WITH u, g, count&#40;*&#41; AS preferência)
-
-[//]: # (ORDER BY preferência DESC)
-
-[//]: # (LIMIT 3)
-
-[//]: # ()
-[//]: # (MATCH &#40;g&#41;<-[:IN_GENRE]-&#40;recomendação:Movie&#41;)
-
-[//]: # (WHERE NOT EXISTS&#40;&#40;u&#41;-[:WATCHED]->&#40;recomendação&#41;&#41;)
-
-[//]: # ()
-[//]: # (RETURN DISTINCT recomendação.title AS Recomendação,)
-
-[//]: # (       g.name AS Gênero,)
-
-[//]: # (       preferência AS ScoreGênero)
-
-[//]: # (ORDER BY preferência DESC)
-
-[//]: # (LIMIT 5;)
-
-[//]: # (```)
+RETURN DISTINCT recomendação.title AS Recomendação,
+       g.name AS Gênero,
+       preferência AS ScoreGênero
+ORDER BY preferência DESC
+LIMIT 5;
+```
 
 </details>
 
 <details>
 <summary><b>🌟 Atores Mais Populares</b></summary>
 
-[//]: # (```cypher)
-
-[//]: # (MATCH &#40;p:Person&#41;-[:ACTED_IN]->&#40;m:Movie&#41;<-[w:WATCHED]-&#40;u:User&#41;)
-
-[//]: # (RETURN p.name AS Ator,)
-
-[//]: # (       count&#40;DISTINCT m&#41; AS Filmes,)
-
-[//]: # (       count&#40;w&#41; AS Visualizações,)
-
-[//]: # (       avg&#40;w.rating&#41; AS AvaliaçãoMédia)
-
-[//]: # (ORDER BY Visualizações DESC)
-
-[//]: # (LIMIT 10;)
-
-[//]: # (```)
+```cypher
+MATCH (p:Person)-[:ACTED_IN]->(m:Movie)<-[w:WATCHED]-(u:User)
+RETURN p.name AS Ator,
+       count(DISTINCT m) AS Filmes,
+       count(w) AS Visualizações,
+       avg(w.rating) AS AvaliaçãoMédia
+ORDER BY Visualizações DESC
+LIMIT 10;
+```
 
 </details>
 
@@ -397,7 +314,7 @@ Execute os scripts na ordem:
 
 ---
 
-## 📝 Licença
+## 📄 Licença
 
 Este projeto está licenciado sob a **MIT License**.
 
@@ -409,13 +326,13 @@ Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 👩‍💻 Autora
 
+<div align="center">
+
 <img src="https://github.com/nataliaberbetviana.png" width="150px" style="border-radius: 50%"/>
 
 ### **Natália Berbet Viana**
 
 *Desenvolvido com 💙 e muito ☕*
-
-<br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/nataliaberbetviana)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nataliaberbetviana)
@@ -425,19 +342,15 @@ Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ### ⭐ Se este projeto foi útil, considere dar uma estrela!
 
-<br>
-
 **Feito com Neo4j, Cypher e muita dedicação 🚀**
 
 <br>
 
 ```
-╔══════════════════════════════════════════════════════════╗
-║  "Dados são apenas dados. Grafos contam histórias." 📊  ║
-╚══════════════════════════════════════════════════════════╝
+  ╔═══════════════════════════════════════════════════════════╗
+  ║   "Dados são apenas dados. Grafos contam histórias." 📊   ║
+  ╚═══════════════════════════════════════════════════════════╝
 ```
-
----
 
 <sub>Projeto desenvolvido para o Bootcamp Neo4j & Análise de Dados com Grafos | DIO © 2025</sub>
 
