@@ -12,19 +12,21 @@
 </div>
 
 ---
+<details>
+<summary><h2> 📑 Índice </h2></summary>
 
-## 📑 Índice
 
-<a href="#sobre-o-projeto">📚 Sobre o Projeto</a><br>
-<a href="#objetivos">🎯 Objetivos</a><br>
-<a href="#tecnologias">🛠️ Tecnologias</a><br>
-<a href="#estrutura">📁 Estrutura</a><br>
-<a href="#comecando">🚀 Começando</a><br>
-<a href="#modelo-de-dados">📊 Modelo de Dados</a><br>
-<a href="#consultas"> 💡 Consultas</a><br>
-<a href="#resultados"> 🏆 Resultados</a><br>
-<a href="#licenca"> 📄 Licença</a><br>
-<a href="#Autora"> 👩‍💻 Autora</a><br>
+<a href="#sobre-o-projeto"> 📚  Sobre o Projeto</a><br>
+<a href="#objetivos"> 🎯  Objetivos</a><br>
+<a href="#tecnologias"> 🛠️  Tecnologias</a><br>
+<a href="#estrutura"> 📁  Estrutura</a><br>
+<a href="#comecando"> 🚀  Começando</a><br>
+<a href="#modelo-de-dados">📊  Modelo de Dados</a><br>
+<a href="#consultas"> 💡  Consultas</a><br>
+<a href="#resultados"> 🏆  Resultados</a><br>
+<a href="#licenca"> 📄  Licença</a><br>
+<a href="#Autora"> 👩‍💻  Autora</a><br>
+</details>
 
 ---
 <a id="sobre-o-projeto"></a>
