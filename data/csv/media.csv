@@ -1,11 +1,10 @@
-id;titulo;tipo
-U1;A Origem;Movie
-U2;Interestelar;Movie
-U3;Dunkirk;Movie
-U4;Peaky Blinders;Series
-U5;1917;Movie
-U6;Blade Runner 2049;Movie
-U7;O Cavaleiro das Trevas;Movie
-U8;O Lobo de Wall Street;Movie
-U9;A Grande Aposta;Movie
-U10;True Detective;Series
+M1,A Origem,Movie
+M2,Interestelar,Movie
+M3,Dunkirk,Movie
+M4,Peaky Blinders,Series
+M5,1917,Movie
+M6,Blade Runner 2049,Movie
+M7,O Cavaleiro das Trevas,Movie
+M8,O Lobo de Wall Street,Movie
+M9,A Grande Aposta,Movie
+M10,True Detective,Series

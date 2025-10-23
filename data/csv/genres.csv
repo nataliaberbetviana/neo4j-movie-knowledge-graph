@@ -1,11 +1,10 @@
-id;nome
-G1;Ação
-G2;Ficção Científica
-G3;Drama
-G4;Suspense
-G5;Guerra
-G6;Crime
-G7;Mistério
-G8;Biografia
-G9;Comédia
-G10;Thriller
+G1,AÃ§Ã£o
+G2,FicÃ§Ã£o CientÃ­fica
+G3,Drama
+G4,Suspense
+G5,Guerra
+G6,Crime
+G7,MistÃ©rio
+G8,Biografia
+G9,ComÃ©dia
+G10,Thriller
