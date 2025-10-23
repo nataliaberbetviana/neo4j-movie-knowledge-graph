@@ -15,16 +15,16 @@
 
 ## 📑 Índice
 
-- [📚 Sobre o Projeto](#sobre-o-projeto)
-- [🎯 Objetivos](#objetivos)
-- [🛠️ Tecnologias](#tecnologias)
-- [📁 Estrutura](#estrutura)
-- [🚀 Começando](#começando)
-- [📊 Modelo de Dados](#modelo-de-dados)
-- [💡 Consultas](#consultas)
-- [🏆 Resultados](#resultados)
-- [📄 Licença](#licença)
-- [👩‍💻 Autora](#autora)
+- [📚 Sobre o Projeto](##sobre-o-projeto)
+- [🎯 Objetivos](##objetivos)
+- [🛠️ Tecnologias](##tecnologias)
+- [📁 Estrutura](##estrutura)
+- [🚀 Começando](##começando)
+- [📊 Modelo de Dados](##modelo-de-dados)
+- [💡 Consultas](##consultas)
+- [🏆 Resultados](##resultados)
+- [📄 Licença](##licença)
+- [👩‍💻 Autora](##autora)
 
 ---
 
