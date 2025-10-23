@@ -15,19 +15,20 @@
 
 ## 📑 Índice
 
-- [📚 Sobre o Projeto](##sobre-o-projeto)
-- [🎯 Objetivos](##objetivos)
-- [🛠️ Tecnologias](##tecnologias)
-- [📁 Estrutura](##estrutura)
-- [🚀 Começando](##começando)
-- [📊 Modelo de Dados](##modelo-de-dados)
-- [💡 Consultas](##consultas)
-- [🏆 Resultados](##resultados)
-- [📄 Licença](##licença)
-- [👩‍💻 Autora](##autora)
+<a href="#sobre-o-projeto">📚 Sobre o Projeto</a><br>
+<a href="#objetivos">🎯 Objetivos</a><br>
+- [🎯 Objetivos](#objetivos)
+- [🛠️ Tecnologias](#tecnologias)
+- [📁 Estrutura](#estrutura)
+- [🚀 Começando](#começando)
+- [📊 Modelo de Dados](#modelo-de-dados)
+- [💡 Consultas](#consultas)
+- [🏆 Resultados](#resultados)
+- [📄 Licença](#licença)
+- [👩‍💻 Autora](#autora)
 
 ---
-
+<a id="sobre-o-projeto"></a>
 ## 📚 Sobre o Projeto
 
 <div align="center">
@@ -43,7 +44,7 @@ Criação de um **Grafo de Conhecimento** que simula um serviço de streaming, m
 </div>
 
 ---
-
+<a id="objetivos"></a>
 ## 🎯 Objetivos
 
 ### 📌 Requisitos do Desafio
