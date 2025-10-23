@@ -17,15 +17,14 @@
 
 <a href="#sobre-o-projeto">📚 Sobre o Projeto</a><br>
 <a href="#objetivos">🎯 Objetivos</a><br>
-- [🎯 Objetivos](#objetivos)
-- [🛠️ Tecnologias](#tecnologias)
-- [📁 Estrutura](#estrutura)
-- [🚀 Começando](#começando)
-- [📊 Modelo de Dados](#modelo-de-dados)
-- [💡 Consultas](#consultas)
-- [🏆 Resultados](#resultados)
-- [📄 Licença](#licença)
-- [👩‍💻 Autora](#autora)
+<a href="#tecnologias">🛠️ Tecnologias</a><br>
+<a href="#estrutura">📁 Estrutura</a><br>
+<a href="#comecando">🚀 Começando</a><br>
+<a href="#modelo-de-dados">📊 Modelo de Dados</a><br>
+<a href="#consultas"> 💡 Consultas</a><br>
+<a href="#resultados"> 🏆 Resultados</a><br>
+<a href="#licenca"> 📄 Licença</a><br>
+<a href="#Autora"> 👩‍💻 Autora</a><br>
 
 ---
 <a id="sobre-o-projeto"></a>
@@ -101,7 +100,7 @@ graph TB
 ```
 
 ---
-
+<a id="tecnologias"></a>
 ## 🛠️ Tecnologias
 
 <div align="center">
@@ -115,7 +114,7 @@ graph TB
 </div>
 
 ---
-
+<a id="estrutura"></a>
 ## 📁 Estrutura
 
 ```
@@ -143,7 +142,7 @@ graph TB
 ```
 
 ---
-
+<a id="comecando"></a>
 ## 🚀 Começando
 
 ### ✅ Pré-requisitos
@@ -193,7 +192,7 @@ Execute os scripts na ordem:
 </details>
 
 ---
-
+<a id="modelo-de-dados"></a>
 ## 📊 Modelo de Dados
 
 ### 🗝️ Arquitetura do Grafo
@@ -217,7 +216,7 @@ Execute os scripts na ordem:
 ```
 
 ---
-
+<a id="consultas"></a>
 ## 💡 Consultas
 
 ### 🔍 Exemplos de Queries
@@ -289,7 +288,7 @@ LIMIT 10;
 </details>
 
 ---
-
+<a id="resultados"></a>
 ## 🏆 Resultados
 
 ### 📈 Estatísticas do Projeto
@@ -314,7 +313,7 @@ LIMIT 10;
 - ✅ Queries otimizadas com índices
 
 ---
-
+<a id="licenca"></a>
 ## 📄 Licença
 
 Este projeto está licenciado sob a **MIT License**.
@@ -324,7 +323,7 @@ Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 [![License: MIT](https://img.shields.io/badge/License-MIT-FFB6C1.svg?style=for-the-badge)](LICENSE)
 
 ---
-
+<a id="autora"></a>
 ## 👩‍💻 Autora
 
 <div align="center">
