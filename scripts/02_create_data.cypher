@@ -1,0 +1,47 @@
+// A. PESSOAS (PERSONS)
+CREATE (p1:Person {id: 'P1', nome: 'Christopher Nolan'})
+CREATE (p2:Person {id: 'P2', nome: 'Leonardo DiCaprio'})
+CREATE (p3:Person {id: 'P3', nome: 'Cillian Murphy'})
+CREATE (p4:Person {id: 'P4', nome: 'Tom Hardy'})
+CREATE (p5:Person {id: 'P5', nome: 'Sam Mendes'})
+CREATE (p6:Person {id: 'P6', nome: 'Ryan Gosling'})
+CREATE (p7:Person {id: 'P7', nome: 'Christian Bale'})
+CREATE (p8:Person {id: 'P8', nome: 'Martin Scorsese'})
+CREATE (p9:Person {id: 'P9', nome: 'Brad Pitt'})
+CREATE (p10:Person {id: 'P10', nome: 'Matthew McConaughey'});
+
+// B. MÍDIA (MEDIA) - Usando IDs M1-M10
+CREATE (m1:Media {id: 'M1', titulo: 'A Origem', tipo: 'Movie'})
+CREATE (m2:Media {id: 'M2', titulo: 'Interestelar', tipo: 'Movie'})
+CREATE (m3:Media {id: 'M3', titulo: 'Dunkirk', tipo: 'Movie'})
+CREATE (m4:Media {id: 'M4', titulo: 'Peaky Blinders', tipo: 'Series'})
+CREATE (m5:Media {id: 'M5', titulo: '1917', tipo: 'Movie'})
+CREATE (m6:Media {id: 'M6', titulo: 'Blade Runner 2049', tipo: 'Movie'})
+CREATE (m7:Media {id: 'M7', titulo: 'O Cavaleiro das Trevas', tipo: 'Movie'})
+CREATE (m8:Media {id: 'M8', titulo: 'O Lobo de Wall Street', tipo: 'Movie'})
+CREATE (m9:Media {id: 'M9', titulo: 'A Grande Aposta', tipo: 'Movie'})
+CREATE (m10:Media {id: 'M10', titulo: 'True Detective', tipo: 'Series'});
+
+// C. GÊNEROS (GENRES)
+CREATE (g1:Genre {id: 'G1', nome: 'Ação'})
+CREATE (g2:Genre {id: 'G2', nome: 'Ficção Científica'})
+CREATE (g3:Genre {id: 'G3', nome: 'Drama'})
+CREATE (g4:Genre {id: 'G4', nome: 'Suspense'})
+CREATE (g5:Genre {id: 'G5', nome: 'Guerra'})
+CREATE (g6:Genre {id: 'G6', nome: 'Crime'})
+CREATE (g7:Genre {id: 'G7', nome: 'Mistério'})
+CREATE (g8:Genre {id: 'G8', nome: 'Biografia'})
+CREATE (g9:Genre {id: 'G9', nome: 'Comédia'})
+CREATE (g10:Genre {id: 'G10', nome: 'Thriller'});
+
+// D. USUÁRIOS (USERS)
+CREATE (u1:User {id: 'U1', nome: 'Ana'})
+CREATE (u2:User {id: 'U2', nome: 'Bruno'})
+CREATE (u3:User {id: 'U3', nome: 'Carla'})
+CREATE (u4:User {id: 'U4', nome: 'Daniel'})
+CREATE (u5:User {id: 'U5', nome: 'Erica'})
+CREATE (u6:User {id: 'U6', nome: 'Fábio'})
+CREATE (u7:User {id: 'U7', nome: 'Gabriela'})
+CREATE (u8:User {id: 'U8', nome: 'Hugo'})
+CREATE (u9:User {id: 'U9', nome: 'Ivana'})
+CREATE (u10:User {id: 'U10', nome: 'Jorge'});

@@ -132,8 +132,9 @@ graph TB
 │
 ├── 📂 scripts/
 │   ├── 📧 01_create_constraints.cypher
-│   ├── 📥 02_import_data.cypher
-│   └── 📝 03_queries.cypher
+│   ├── 📥 02_create_data.cypher
+│   ├── 📥 03_create_relation.cypher
+│   └── 📝 04_test_queries.cypher
 │
 ├── 📂 docs/
 │   ├── 🖼️ modelo_grafo.png
@@ -184,11 +185,14 @@ Execute os scripts na ordem:
 // 1️⃣ Criar restrições e índices
 :source scripts/01_create_constraints.cypher
 
-// 2️⃣ Importar dados dos CSVs
-:source scripts/02_import_data.cypher
+// 2️⃣ Criar dados dos CSVs no Neo4J
+:source scripts/02_create_data.cypher
+
+// 2️⃣ Criar a relação dos dados dos CSVs no Neo4J
+:source scripts/03_create_relations.cypher
 
 // 3️⃣ Executar queries de exemplo
-:source scripts/03_queries.cypher
+:source scripts/04_test_queries.cypher
 ```
 
 </details>
@@ -199,21 +203,21 @@ Execute os scripts na ordem:
 
 ### 🗝️ Arquitetura do Grafo
 
-| Entidade | Propriedades | Descrição |
-|:--------:|:-------------|:----------|
-| **👤 User** | `name`, `email`, `created_at` | Usuários da plataforma |
-| **🎬 Movie** | `title`, `year`, `duration`, `description` | Filmes disponíveis |
-| **📺 Series** | `title`, `seasons`, `episodes`, `description` | Séries disponíveis |
-| **🎭 Person** | `name`, `birth_year`, `nationality` | Atores e diretores |
-| **🎪 Genre** | `name`, `description` | Gêneros cinematográficos |
+| Entidade | Propriedades                              | Descrição |
+|:--------:|:------------------------------------------|:----------|
+| **👤 User** | `name`                                    | Usuários da plataforma |
+| **🎬 Movie** | `title`                                   | Filmes disponíveis |
+| **📺 Series** | `title`                                   | Séries disponíveis |
+| **🎭 Person** | `name`                                    | Atores e diretores |
+| **🎪 Genre** | `name`                                    | Gêneros cinematográficos |
 
 ### 🔗 Relacionamentos
 
 ```cypher
 // Padrões de relacionamento
-(:User)-[:WATCHED {rating: 4.5, watched_at: datetime()}]->(:Movie)
-(:Person)-[:ACTED_IN {role: "Personagem"}]->(:Movie)
-(:Person)-[:DIRECTED {year: 2020}]->(:Movie)
+(:User)-[:WATCHED {rating: 4.5)}]->(:Movie)
+(:Person)-[:ACTED_IN]->(:Movie)
+(:Person)-[:DIRECTED]->(:Movie)
 (:Movie)-[:IN_GENRE]->(:Genre)
 ```
 
@@ -242,11 +246,11 @@ LIMIT 10;
 <summary><b>🎭 Atores Frequentes de um Diretor</b></summary>
 
 ```cypher
-MATCH (d:Person)-[:DIRECTED]->(m:Movie)<-[:ACTED_IN]-(a:Person)
-WHERE d.name = "Christopher Nolan"
+MATCH (d:Person)-[:DIRECTED]->(m:Media)<-[:ACTED_IN]-(a:Person)
+WHERE d.nome = "Christopher Nolan" // Usa 'nome' para a propriedade de Pessoa
 WITH a, count(m) AS colaborações
 WHERE colaborações > 1
-RETURN a.name AS Ator, colaborações
+RETURN a.nome AS Ator, colaborações
 ORDER BY colaborações DESC;
 ```
 
@@ -257,18 +261,22 @@ ORDER BY colaborações DESC;
 
 ```cypher
 // Baseado em gêneros favoritos do usuário
-MATCH (u:User {name: "Maria"})-[:WATCHED]->(m:Movie)-[:IN_GENRE]->(g:Genre)
+MATCH (u:User {nome: "Ana"})-[:RATED]->(m:Media)
+WHERE m.tipo = 'Movie' // Filtra a mídia para ser apenas 'Movie'
+MATCH (m)-[:HAS_GENRE]->(g:Genre)
 WITH u, g, count(*) AS preferência
 ORDER BY preferência DESC
 LIMIT 3
 
-MATCH (g)<-[:IN_GENRE]-(recomendação:Movie)
-WHERE NOT EXISTS((u)-[:WATCHED]->(recomendação))
-
-RETURN DISTINCT recomendação.title AS Recomendação,
-       g.name AS Gênero,
+// 2. Busca filmes não assistidos nesses gêneros
+MATCH (g)<-[:HAS_GENRE]-(recomendação:Media)
+WHERE recomendação.tipo = 'Movie'
+AND NOT EXISTS((u)-[:RATED]->(recomendação)) // Confirma que Ana não avaliou (:RATED)
+                                            
+RETURN DISTINCT recomendação.titulo AS Recomendação,
+       g.nome AS Gênero,
        preferência AS ScoreGênero
-ORDER BY preferência DESC
+ORDER BY ScoreGênero DESC
 LIMIT 5;
 ```
 
@@ -278,12 +286,13 @@ LIMIT 5;
 <summary><b>🌟 Atores Mais Populares</b></summary>
 
 ```cypher
-MATCH (p:Person)-[:ACTED_IN]->(m:Movie)<-[w:WATCHED]-(u:User)
-RETURN p.name AS Ator,
+MATCH (p:Person)-[:ACTED_IN]->(m:Media)<-[r:RATED]-(u:User)
+WHERE m.tipo = 'Movie' // Filtra para incluir apenas filmes
+RETURN p.nome AS Ator,
        count(DISTINCT m) AS Filmes,
-       count(w) AS Visualizações,
-       avg(w.rating) AS AvaliaçãoMédia
-ORDER BY Visualizações DESC
+       count(r) AS TotalAvaliacoes, // Contagem de todas as avaliações recebidas pelos filmes do ator
+       avg(r.rating) AS AvaliaçãoMédia
+ORDER BY TotalAvaliacoes DESC, AvaliaçãoMédia DESC
 LIMIT 10;
 ```
 
@@ -297,13 +306,13 @@ LIMIT 10;
 
 | Métrica | Valor |
 |:--------|------:|
-| 📊 **Total de Nós** | 50+ |
-| 🔗 **Total de Relacionamentos** | 100+ |
-| 👥 **Usuários Cadastrados** | 10+ |
-| 🎬 **Filmes no Catálogo** | 15+ |
-| 📺 **Séries Disponíveis** | 15+ |
-| 🎭 **Pessoas (Atores/Diretores)** | 20+ |
-| 🎪 **Gêneros** | 10+ |
+| 📊 **Total de Nós** |    40 |
+| 🔗 **Total de Relacionamentos** |    44 |
+| 👥 **Usuários Cadastrados** |    10 |
+| 🎬 **Filmes no Catálogo** |     8 |
+| 📺 **Séries Disponíveis** |     2 |
+| 🎭 **Pessoas (Atores/Diretores)** |    10 |
+| 🎪 **Gêneros** |    10 |
 
 ### ✨ Funcionalidades Implementadas
 
@@ -313,6 +322,8 @@ LIMIT 10;
 - ✅ Identificação de colaborações frequentes
 - ✅ Rankings de popularidade
 - ✅ Queries otimizadas com índices
+
+<img src="docs/bloom-visualisation.png" alt="Modelo do Grafo" width="100%"/>
 
 ---
 <a id="licenca"></a>
